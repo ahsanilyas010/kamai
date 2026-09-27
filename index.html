@@ -3,7 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kamai – Order Lao, Kamai Banao</title>
+<title>Kamai — Order Lao, Kamai Banao | Pakistan Retail Order Network</title>
+<meta name="description" content="Kamai — Pakistan retail order collection network. Earn commission visiting stores. No office, no investment. Active in Islamabad &amp; Rawalpindi.">
+<meta property="og:title" content="Kamai — Order Lao, Kamai Banao">
+<meta property="og:description" content="Visit local stores, book orders on the Kamai app, earn commission per approved order.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kamai.assorted.group">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://kamai.assorted.group">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Assorted Produce Traders">
+<meta name="keywords" content="Kamai, order booking Pakistan, retail order network, earn commission Pakistan, field sales job, Kamai Hero, Islamabad, Rawalpindi, no investment income, petrol shop distribution">
+<meta name="theme-color" content="#0d3d1f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%230d3d1f'/%3E%3Ctext%20x='32'%20y='45'%20font-family='Arial'%20font-size='38'%20font-weight='bold'%20text-anchor='middle'%20fill='%237dc43a'%3EK%3C/text%3E%3C/svg%3E">
+<!-- Open Graph -->
+<meta property="og:site_name" content="Kamai">
+<meta property="og:locale" content="en_PK">
+<meta property="og:image" content="https://kamai.assorted.group/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kamai — Order Lao, Kamai Banao">
+<!-- Twitter -->
+<meta name="twitter:title" content="Kamai — Order Lao, Kamai Banao">
+<meta name="twitter:description" content="Visit local stores, book orders on the Kamai app, and earn commission per approved order. Active in Islamabad and Rawalpindi.">
+<meta name="twitter:image" content="https://kamai.assorted.group/og-cover.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Kamai",
+  "legalName": "Assorted Produce Traders",
+  "url": "https://kamai.assorted.group",
+  "logo": "https://kamai.assorted.group/og-cover.png",
+  "slogan": "Order Lao, Kamai Banao",
+  "description": "Kamai is a Pakistan retail order collection network. Field agents visit local stores, book product orders on the Kamai app, and earn commission on every approved order.",
+  "areaServed": ["Islamabad", "Rawalpindi", "Wah", "Gujar Khan"],
+  "address": { "@type": "PostalAddress", "addressLocality": "Islamabad", "addressRegion": "Islamabad Capital Territory", "addressCountry": "PK" }
+}
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -45,16 +85,32 @@
 
   /* HERO */
   .hero {
+    position: relative;
     min-height: 100vh;
-    background: linear-gradient(135deg, var(--forest) 0%, var(--pine) 55%, #1e7a45 100%);
     display: flex; align-items: center;
-    padding: 120px 5% 80px; position: relative; overflow: hidden;
+    padding: 120px 5% 80px;
+    overflow: hidden;
   }
-  .hero::before {
-    content: ''; position: absolute; inset: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  .hero-video-bg {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; z-index: 0;
+    pointer-events: none;
   }
-  .hero-content { max-width: 580px; position: relative; z-index: 1; }
+  .hero-overlay {
+    position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(
+      120deg,
+      rgba(10,40,20,0.82) 0%,
+      rgba(13,61,31,0.68) 50%,
+      rgba(10,40,20,0.52) 100%
+    );
+  }
+  .hero-overlay::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-content { max-width: 580px; position: relative; z-index: 2; }
   .hero-eyebrow {
     display: inline-flex; align-items: center; gap: 8px;
     background: rgba(168,224,95,0.15); border: 1px solid rgba(168,224,95,0.3);
@@ -66,23 +122,29 @@
   .hero h1 { font-size: clamp(2.8rem, 5.5vw, 4.4rem); font-weight: 900; line-height: 1.05; color: var(--white); margin-bottom: 8px; }
   .hero h1 .accent { color: var(--lime); display: block; }
   .hero-urdu { font-size: clamp(1rem, 2.2vw, 1.3rem); color: rgba(255,255,255,0.6); margin-bottom: 22px; font-style: italic; }
-  .hero p { font-size: 1.05rem; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 36px; max-width: 440px; }
+  .hero p { font-size: 1.05rem; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 36px; max-width: 440px; }
   .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
   .btn-primary { background: var(--lime); color: var(--forest); padding: 14px 32px; border-radius: 8px; font-weight: 800; font-size: .95rem; text-decoration: none; transition: background .2s, transform .15s; }
   .btn-primary:hover { background: var(--bright); transform: translateY(-1px); }
-  .btn-ghost { border: 2px solid rgba(255,255,255,0.3); color: var(--white); padding: 13px 28px; border-radius: 8px; font-weight: 700; font-size: .95rem; text-decoration: none; transition: border-color .2s, background .2s; }
+  .btn-ghost { border: 2px solid rgba(255,255,255,0.35); color: var(--white); padding: 13px 28px; border-radius: 8px; font-weight: 700; font-size: .95rem; text-decoration: none; transition: border-color .2s, background .2s; }
   .btn-ghost:hover { border-color: var(--lime); background: rgba(125,196,58,0.08); }
-
-  .hero-visual { position: absolute; right: 4%; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 16px; z-index: 1; }
-  .stat-pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 14px 20px; border-radius: 14px; display: flex; align-items: center; gap: 14px; animation: float 4s ease-in-out infinite; }
-  .stat-pill:nth-child(2) { animation-delay: 1.3s; }
-  .stat-pill:nth-child(3) { animation-delay: 2.6s; }
-  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+  .hero-visual { position: absolute; right: 4%; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 16px; z-index: 2; }
+  .stat-pill { background: rgba(0,0,0,0.28); border: 1px solid rgba(255,255,255,0.18); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); padding: 14px 20px; border-radius: 14px; display: flex; align-items: center; gap: 14px; }
   .stat-pill-icon { width: 42px; height: 42px; background: var(--lime); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
   .stat-pill-text strong { display: block; color: var(--white); font-size: 1.1rem; font-weight: 800; }
   .stat-pill-text span { color: rgba(255,255,255,0.6); font-size: .73rem; font-weight: 600; }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+  .stat-pill:nth-child(1){ animation: float 4s ease-in-out infinite; }
+  .stat-pill:nth-child(2){ animation: float 4s ease-in-out 1.3s infinite; }
+  .stat-pill:nth-child(3){ animation: float 4s ease-in-out 2.6s infinite; }
+  @keyframes heroFadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+  .hero-eyebrow{ animation: heroFadeUp .7s ease .1s both; }
+  .hero h1     { animation: heroFadeUp .7s ease .25s both; }
+  .hero-urdu   { animation: heroFadeUp .7s ease .38s both; }
+  .hero p      { animation: heroFadeUp .7s ease .48s both; }
+  .hero-btns   { animation: heroFadeUp .7s ease .6s both; }
 
-  /* SECTION BASE */
+    /* SECTION BASE */
   section { padding: 90px 5%; }
   .section-label { display: inline-block; color: var(--leaf); font-weight: 700; font-size: .75rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
   h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 900; color: var(--forest); line-height: 1.15; }
@@ -203,6 +265,83 @@
     .comm-cards { grid-template-columns: 1fr; }
     .features-grid { grid-template-columns: 1fr 1fr; }
   }
+
+  /* ============================================================
+     HERO VIDEO SHOWCASE + SCROLL ANIMATIONS (added)
+     Video is externalised to kamai_hero.mp4 and placed in an
+     animated, floating screen frame instead of a dim background.
+     ============================================================ */
+  .hero { background: linear-gradient(120deg, #0a2814 0%, var(--forest) 55%, #0c3a1e 100%); }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(1100px 560px at 88% 6%, rgba(125,196,58,0.16), transparent 60%),
+      radial-gradient(900px 500px at 0% 100%, rgba(46,139,74,0.14), transparent 55%),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-inner {
+    position: relative; z-index: 2; width: 100%;
+    display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.05fr);
+    gap: 48px; align-items: center;
+  }
+  .hero-content { max-width: 560px; }
+
+  .hero-showcase { position: relative; justify-self: end; width: 100%; max-width: 600px; perspective: 1200px; }
+  .video-frame {
+    position: relative; border-radius: 18px; background: #0b1f12;
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.06);
+    animation: showcaseIn 1s cubic-bezier(.22,1,.36,1) .15s both, frameFloat 7s ease-in-out 1.3s infinite;
+    transform-style: preserve-3d; will-change: transform;
+  }
+  .video-glow {
+    position: absolute; inset: -3px; z-index: 0; border-radius: 21px;
+    background: linear-gradient(120deg, var(--lime), transparent 42%, var(--leaf));
+    filter: blur(24px); opacity: .35; animation: glowPulse 5s ease-in-out infinite;
+  }
+  .video-bar { position: relative; z-index: 2; display: flex; gap: 7px; padding: 13px 15px; }
+  .video-bar span { width: 11px; height: 11px; border-radius: 50%; background: rgba(255,255,255,0.22); }
+  .video-bar span:nth-child(1){ background:#ff5f57; } .video-bar span:nth-child(2){ background:#febc2e; } .video-bar span:nth-child(3){ background:#28c840; }
+  .video-screen { position: relative; z-index: 2; margin: 0 13px 13px; border-radius: 12px; overflow: hidden; aspect-ratio: 16 / 9; background: #08160d; }
+  .hero-video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .v-badge {
+    position: absolute; z-index: 5; display: flex; align-items: center; gap: 11px;
+    background: rgba(9,24,14,0.74); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(168,224,95,0.35); border-radius: 14px; padding: 10px 14px;
+    box-shadow: 0 12px 34px rgba(0,0,0,0.4);
+  }
+  .v-badge .v-ico { font-size: 1.3rem; line-height: 1; }
+  .v-badge strong { display: block; color: #fff; font-size: .9rem; font-weight: 800; line-height: 1.2; }
+  .v-badge em { color: rgba(255,255,255,0.6); font-size: .72rem; font-style: normal; font-weight: 600; }
+  .v-badge-1 { left: -28px; top: 20%; animation: showcaseIn .8s ease .7s both, floatY 5s ease-in-out 1.5s infinite; }
+  .v-badge-2 { right: -24px; bottom: 15%; animation: showcaseIn .8s ease .95s both, floatY 5s ease-in-out 2.3s infinite; }
+
+  @keyframes showcaseIn { from { opacity: 0; transform: translateY(34px) scale(.96); } to { opacity: 1; transform: none; } }
+  @keyframes frameFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  @keyframes floatY     { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+  @keyframes glowPulse  { 0%,100% { opacity: .28; } 50% { opacity: .5; } }
+
+  /* Scroll reveal (added by JS: body.js-reveal) */
+  .js-reveal .reveal { opacity: 0; transform: translateY(26px); }
+  .js-reveal .reveal.in { opacity: 1; transform: none; transition: opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1); }
+
+  @media (max-width: 980px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero-content { max-width: none; }
+    .hero-showcase { justify-self: center; max-width: 540px; }
+  }
+  @media (max-width: 560px) {
+    .v-badge em { display: none; }
+    .v-badge { padding: 8px 11px; gap: 8px; }
+    .v-badge-1 { left: -6px; top: 6%; } .v-badge-2 { right: -6px; bottom: 6%; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .video-frame, .v-badge, .video-glow,
+    .hero-eyebrow, .hero h1, .hero-urdu, .hero p, .hero-btns,
+    .stat-pill { animation: none !important; }
+    .js-reveal .reveal { opacity: 1 !important; transform: none !important; }
+  }
 </style>
 </head>
 <body>
@@ -224,41 +363,37 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <div class="hero-eyebrow">Powered by Assorted Produce Traders</div>
-    <h1>Order Lao.<span class="accent">Kamai Banao.</span></h1>
-    <p class="hero-urdu">Aap Orders Lao, Baaki Sab Hum Karenge!</p>
-    <p>Visit local stores, book product orders through the Kamai app, and earn commission on every approved order — no office, no fixed hours, no investment required.</p>
-    <div class="hero-btns">
-      <a href="#cta" class="btn-primary">Start Earning Today</a>
-      <a href="#how" class="btn-ghost">See How It Works</a>
-    </div>
-  </div>
-  <div class="hero-visual">
-    <div class="stat-pill">
-      <div class="stat-pill-icon">🏪</div>
-      <div class="stat-pill-text">
-        <strong>Rs. 1,000</strong>
-        <span>New store registration</span>
+<section class="hero" id="top" aria-label="Kamai hero banner">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Powered by Assorted Produce Traders</div>
+      <h1>Order Lao.<span class="accent">Kamai Banao.</span></h1>
+      <p class="hero-urdu">Aap Orders Lao, Baaki Sab Hum Karenge!</p>
+      <p>Visit local stores, book product orders through the Kamai app, and earn commission on every approved order — no office, no fixed hours, no investment required.</p>
+      <div class="hero-btns">
+        <a href="#cta" class="btn-primary">Start Earning Today</a>
+        <a href="#how" class="btn-ghost">See How It Works</a>
       </div>
     </div>
-    <div class="stat-pill">
-      <div class="stat-pill-icon">📦</div>
-      <div class="stat-pill-text">
-        <strong>Rs. 500</strong>
-        <span>Repeat order (Rs. 10,000+)</span>
+    <div class="hero-showcase">
+      <div class="video-frame">
+        <div class="video-glow" aria-hidden="true"></div>
+        <div class="video-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="video-screen">
+          <video class="hero-video" autoplay muted loop playsinline preload="metadata"
+                 poster="kamai_hero_poster.png" aria-label="How Kamai works — promotional video">
+            <source src="kamai_hero.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
-    </div>
-    <div class="stat-pill">
-      <div class="stat-pill-icon">💰</div>
-      <div class="stat-pill-text">
-        <strong>Rs. 250</strong>
-        <span>Repeat order (below Rs. 10,000)</span>
-      </div>
+      <span class="v-badge v-badge-1"><span class="v-ico">🏪</span><span class="v-txt"><strong>New-store bonus</strong><em>Bigger payout on first order</em></span></span>
+      <span class="v-badge v-badge-2"><span class="v-ico">💸</span><span class="v-txt"><strong>Paid in 10 days</strong><em>To your account or wallet</em></span></span>
     </div>
   </div>
 </section>
+
+
 
 <!-- HOW IT WORKS -->
 <section class="how" id="how">
@@ -266,7 +401,7 @@
   <h2>4 Steps to <span class="lime">Your First Commission</span></h2>
   <p class="section-sub">Simple. Mobile. Flexible. Everything happens through the Kamai app on your phone.</p>
   <div class="how-grid">
-    <div class="how-step"><div class="step-num">1</div><h3>Register on Kamai</h3><p>Sign up at kamai.assortedtrade.com using your phone number. Get approved and assigned your area.</p></div>
+    <div class="how-step"><div class="step-num">1</div><h3>Register on Kamai</h3><p>Sign up at kamai.assorted.group using your phone number. Get approved and assigned your area.</p></div>
     <div class="how-step"><div class="step-num">2</div><h3>Visit Retail Stores</h3><p>Go to stores in your area. GPS check-in, capture photos, register new stores, and collect product orders.</p></div>
     <div class="how-step"><div class="step-num">3</div><h3>Submit via App</h3><p>Submit orders through the Kamai app. Track status in real time with your earnings dashboard.</p></div>
     <div class="how-step"><div class="step-num">4</div><h3>Earn Commission</h3><p>Once approved, commission is credited within 10 working days to your account or wallet.</p></div>
@@ -277,13 +412,13 @@
 <section class="commission" id="commission">
   <span class="section-label">Earn More</span>
   <h2>Commission Structure</h2>
-  <p class="section-sub">Earn more for every new store and every order — unlimited commissions, no cap.</p>
+  <p class="section-sub">Earn more for every new store and every order. Unlimited commissions, no cap.</p>
   <div class="comm-cards">
-    <div class="comm-card"><span class="comm-tag">New Store Registration</span><div class="comm-amount">Rs 1,000 <span>/ order</span></div><p class="comm-range">Collect the first order from<br><strong style="color:#a8e05f;">any newly registered store</strong></p></div>
-    <div class="comm-card"><span class="comm-tag">Repeat Order</span><div class="comm-amount">Rs 500 <span>/ order</span></div><p class="comm-range">Repeat order from existing store<br><strong style="color:#a8e05f;">Rs. 10,000 or above</strong></p></div>
-    <div class="comm-card"><span class="comm-tag">Repeat Order</span><div class="comm-amount">Rs 250 <span>/ order</span></div><p class="comm-range">Repeat order from existing store<br><strong style="color:#a8e05f;">below Rs. 10,000</strong></p></div>
+    <div class="comm-card"><span class="comm-tag">New Store</span><div class="comm-amount">Rs 1,000 <span>/ order</span></div><p class="comm-range">First order from<br><strong style="color:#a8e05f;">any newly registered store</strong></p></div>
+    <div class="comm-card"><span class="comm-tag">Repeat Order</span><div class="comm-amount">Rs 500 <span>/ order</span></div><p class="comm-range">Repeat order from an existing store<br><strong style="color:#a8e05f;">Rs. 10,000 or above</strong></p></div>
+    <div class="comm-card"><span class="comm-tag">Repeat Order</span><div class="comm-amount">Rs 250 <span>/ order</span></div><p class="comm-range">Repeat order from an existing store<br><strong style="color:#a8e05f;">below Rs. 10,000</strong></p></div>
   </div>
-  <div class="comm-note">💡 <strong>Payment Policy:</strong> Commission paid on approved orders only. Payout within 10 working days — transferred directly to your account or wallet. No cap on earnings — commissions are unlimited.</div>
+  <div class="comm-note">💡 <strong>Payment Policy:</strong> Commission paid on approved orders only. Payout within 10 working days, transferred directly to your account or wallet. No cap on earnings, commissions are unlimited.</div>
 </section>
 
 <!-- WHO CAN JOIN -->
@@ -410,7 +545,7 @@
   <h2>Ready to Start Earning?</h2>
   <p>Register on Kamai today, get assigned your area, and earn commission on every order you collect. No office. No fixed time. Your phone is your office.</p>
   <div>
-    <a href="https://kamai.assortedtrade.com" class="btn-primary" style="font-size:1rem;padding:16px 36px;display:inline-block;margin-bottom:20px;">Register at kamai.assortedtrade.com</a>
+    <a href="https://kamai.assorted.group" class="btn-primary" style="font-size:1rem;padding:16px 36px;display:inline-block;margin-bottom:20px;">Register at kamai.assorted.group</a>
   </div>
   <div>
     <a href="#" class="store-btn"><span class="store-icon">▶</span> Google Play</a>
@@ -432,12 +567,42 @@
     <li><a href="#coverage">Coverage</a></li>
     <li><a href="#app">App Features</a></li>
   </ul>
-  <div class="footer-right">© 2025 Kamai · kamai.assortedtrade.com</div>
+  <div class="footer-right">© 2025 Kamai · kamai.assorted.group</div>
 </footer>
 
 <div class="powered">
   Powered by <span>Assorted Produce Traders (APT)</span> · FF 27, Zarpar Arcade, D-12 Markaz, Islamabad · <span>+92 321 8526405</span>
 </div>
 
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Kamai","url":"https://kamai.assorted.group","description":"Pakistan retail order collection network powered by Assorted Produce Traders.","publisher":{"@type":"Organization","name":"Assorted Produce Traders","address":{"@type":"PostalAddress","streetAddress":"FF 27, Zarpar Arcade, D-12 Markaz","addressLocality":"Islamabad","addressCountry":"PK"}}}</script>
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Respect reduced-motion: pause the hero video and keep the poster frame.
+  if (reduce) {
+    var v = document.querySelector('.hero-video');
+    if (v) { try { v.removeAttribute('autoplay'); v.pause(); } catch (e) {} }
+    return;
+  }
+  if (!('IntersectionObserver' in window)) return;
+
+  document.body.classList.add('js-reveal');
+  var sel = 'section .section-label, section h2, section .section-sub, .how-step, .comm-card, .who-box, .feature-card, .coverage-map, .coverage-list, .policy-box, .v-stat, .store-btn';
+  var els = [].slice.call(document.querySelectorAll(sel));
+  els.forEach(function (el, i) {
+    el.classList.add('reveal');
+    el.style.transitionDelay = (Math.min(i % 4, 3) * 0.06) + 's';
+  });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  els.forEach(function (el) { io.observe(el); });
+  // Failsafe: never leave content hidden if IntersectionObserver misbehaves.
+  setTimeout(function () { els.forEach(function (el) { el.classList.add('in'); }); }, 1600);
+})();
+</script>
 </body>
 </html>

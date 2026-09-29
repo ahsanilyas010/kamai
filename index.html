@@ -86,9 +86,9 @@
   /* HERO */
   .hero {
     position: relative;
-    min-height: 100vh;
+    min-height: auto;
     display: flex; align-items: center;
-    padding: 120px 5% 80px;
+    padding: 120px 5% 70px;
     overflow: hidden;
   }
   .hero-video-bg {
@@ -281,12 +281,14 @@
   }
   .hero-inner {
     position: relative; z-index: 2; width: 100%;
-    display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.05fr);
-    gap: 48px; align-items: center;
+    display: flex; flex-direction: column; align-items: center; gap: 40px;
   }
-  .hero-content { max-width: 560px; }
+  .hero-content { max-width: 780px; text-align: center; margin: 0 auto; }
+  .hero-content .hero-btns { justify-content: center; }
+  .hero-content p { margin-left: auto; margin-right: auto; }
 
-  .hero-showcase { position: relative; justify-self: end; width: 100%; max-width: 600px; perspective: 1200px; }
+  /* Big, centered video centerpiece */
+  .hero-showcase { position: relative; justify-self: center; width: 100%; max-width: 1150px; margin: 0 auto; perspective: 1600px; }
   .video-frame {
     position: relative; border-radius: 18px; background: #0b1f12;
     border: 1px solid rgba(255,255,255,0.12);
@@ -344,9 +346,9 @@
   }
 
   /* Motion-graphic embed (click-to-play, keeps homepage light) */
+  .vp-poster { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
   .vp-cover { position:absolute; inset:0; width:100%; height:100%; padding:0; border:0; cursor:pointer;
-    background:#08160d; display:block; overflow:hidden; }
-  .vp-cover img { width:100%; height:100%; object-fit:cover; display:block; opacity:.96; }
+    background:transparent; display:block; overflow:hidden; }
   .vp-play { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
     width:68px; height:68px; border-radius:50%; background:rgba(13,61,31,.72); border:2px solid var(--lime);
     box-shadow:0 10px 34px rgba(0,0,0,.45); transition:background .2s, transform .2s; }
@@ -357,6 +359,9 @@
   .vp-hint { position:absolute; left:0; right:0; bottom:14px; text-align:center; color:#fff;
     font-size:.8rem; font-weight:700; letter-spacing:.3px; text-shadow:0 2px 8px rgba(0,0,0,.5); }
   .vp-frame { position:absolute; inset:0; width:100%; height:100%; border:0; display:block; background:#0b0f0d; }
+  /* Once the motion graphic is embedded, never let the poster/play button show through */
+  .video-screen:has(iframe.vp-frame) .vp-cover,
+  .video-screen:has(iframe.vp-frame) .vp-poster { display:none !important; }
 </style>
 </head>
 <body>
@@ -396,15 +401,13 @@
         <div class="video-glow" aria-hidden="true"></div>
         <div class="video-bar" aria-hidden="true"><span></span><span></span><span></span></div>
         <div class="video-screen">
-          <button type="button" class="vp-cover" aria-label="Play the Kamai explainer (20 seconds)">
-            <img src="kamai_hero_poster.png" alt="Kamai explainer preview" decoding="async">
+          <img class="vp-poster" src="kamai_hero_poster.png" alt="Kamai explainer preview" decoding="async">
+          <button type="button" class="vp-cover" aria-label="Play the Kamai explainer (20 seconds)" hidden>
             <span class="vp-play" aria-hidden="true"></span>
             <span class="vp-hint">Watch the 20s explainer</span>
           </button>
         </div>
       </div>
-      <span class="v-badge v-badge-1"><span class="v-ico">🏪</span><span class="v-txt"><strong>New-store bonus</strong><em>Bigger payout on first order</em></span></span>
-      <span class="v-badge v-badge-2"><span class="v-ico">💸</span><span class="v-txt"><strong>Paid in 10 days</strong><em>To your account or wallet</em></span></span>
     </div>
   </div>
 </section>
@@ -622,20 +625,30 @@
 </script>
 <script>
 (function () {
-  var cover = document.querySelector('.vp-cover');
-  if (!cover) return;
-  cover.addEventListener('click', function () {
-    var screen = cover.closest('.video-screen');
-    if (!screen) return;
+  var screen = document.querySelector('.video-screen');
+  if (!screen) return;
+  var cover = screen.querySelector('.vp-cover');
+  var loaded = false;
+  function embed() {
+    if (loaded) return; loaded = true;
     var f = document.createElement('iframe');
     f.className = 'vp-frame';
     f.src = 'kamai_explainer.html';
     f.title = 'Kamai explainer motion graphic';
     f.setAttribute('allow', 'autoplay; fullscreen');
-    f.setAttribute('loading', 'lazy');
-    screen.innerHTML = '';
     screen.appendChild(f);
-  }, { once: true });
+    if (cover) cover.hidden = true;
+  }
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) {
+    // Respect reduced-motion: don't autoplay; show an opt-in play button.
+    if (cover) { cover.hidden = false; cover.addEventListener('click', embed, { once: true }); }
+    return;
+  }
+  // Autoplay, but only after first paint so the 5MB bundle never blocks LCP.
+  function go() { (window.requestIdleCallback || function (c) { setTimeout(c, 250); })(embed); }
+  if (document.readyState === 'complete') go();
+  else window.addEventListener('load', go, { once: true });
 })();
 </script>
 </body>

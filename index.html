@@ -496,6 +496,45 @@
   @media (prefers-reduced-motion: reduce) {
     .hero-alt { animation: none !important; }
   }
+
+  /* ---- Motion polish (all disabled under prefers-reduced-motion) ---- */
+  .btn-primary, .nav-cta, .dist-btn { position: relative; overflow: hidden; }
+  .btn-primary::after, .nav-cta::after {
+    content: ''; position: absolute; top: 0; bottom: 0; left: -60%; width: 40%;
+    background: linear-gradient(100deg, transparent, rgba(255,255,255,0.45), transparent);
+    transform: skewX(-20deg); animation: sheen 4.8s ease-in-out 2s infinite; pointer-events: none;
+  }
+  @keyframes sheen { 0%, 60% { left: -60%; } 100% { left: 140%; } }
+  .dist-card { animation: cardFloat 7s ease-in-out infinite; }
+  @keyframes cardFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+  .dist-step::before { transform-origin: top; transition: transform 1s cubic-bezier(.22,1,.36,1) .25s; }
+  .js-reveal .dist-step:not(.in)::before { transform: scaleY(0); }
+  .dist-num { transition: transform .35s cubic-bezier(.34,1.56,.64,1), background .25s; }
+  .dist-step:hover .dist-num { transform: scale(1.12) rotate(-6deg); background: var(--pine); }
+  .dist-benefit, .apt-stage, .apt-stat { transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s, border-color .2s; }
+  .dist-benefit:hover, .apt-stage:hover { transform: translateY(-6px); }
+  .apt-stat:hover { transform: translateY(-6px); box-shadow: 0 18px 36px rgba(13,61,31,0.3); }
+  .k-ico { transition: transform .4s cubic-bezier(.34,1.56,.64,1), background .25s, color .25s; }
+  .dist-benefit:hover .k-ico, .apt-stage:hover .k-ico { transform: scale(1.12) rotate(-6deg); background: var(--forest); color: var(--lime); }
+  .apt-logo { transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s; }
+  .apt-logo:hover { transform: translateY(-4px) scale(1.04); box-shadow: 0 12px 24px rgba(0,0,0,0.35); }
+  .apt-prod { transition: transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s; }
+  .apt-prod img { transition: transform .6s cubic-bezier(.22,1,.36,1); }
+  .apt-prod:hover { transform: translateY(-6px); box-shadow: 0 18px 34px rgba(13,61,31,0.16); }
+  .apt-prod:hover img { transform: scale(1.07); }
+  .apt-ops .chip { transition: transform .25s, background .25s, color .25s; }
+  .apt-ops .chip:hover { transform: translateY(-2px); background: var(--forest); color: var(--lime); }
+  .apt-stat strong { font-variant-numeric: tabular-nums; }
+  .dist-need li::before { animation: tickPop .5s cubic-bezier(.34,1.56,.64,1) both; }
+  .dist-need li:nth-child(2)::before { animation-delay: .08s; } .dist-need li:nth-child(3)::before { animation-delay: .16s; }
+  .dist-need li:nth-child(4)::before { animation-delay: .24s; } .dist-need li:nth-child(5)::before { animation-delay: .32s; } .dist-need li:nth-child(6)::before { animation-delay: .4s; }
+  @keyframes tickPop { from { transform: scale(0); } to { transform: scale(1); } }
+  .apt-stats .apt-stat:nth-child(2) strong, .apt-stats .apt-stat:nth-child(4) strong { text-shadow: 0 0 24px rgba(125,196,58,0.45); }
+  @media (prefers-reduced-motion: reduce) {
+    .btn-primary::after, .nav-cta::after, .dist-card, .dist-need li::before { animation: none !important; }
+    .dist-step::before { transition: none; transform: none !important; }
+    .dist-benefit:hover, .apt-stage:hover, .apt-stat:hover, .apt-prod:hover, .apt-logo:hover { transform: none; }
+  }
 </style>
 </head>
 <body>
@@ -516,7 +555,7 @@
   </ul>
   <div class="nav-actions">
     <a href="#distributors" class="nav-dist">Distributors</a>
-    <a href="#cta" class="nav-cta">Register Now</a>
+    <a href="https://rider.assorted.group" class="nav-cta" target="_blank" rel="noopener">Register Now</a>
   </div>
 </nav>
 
@@ -530,7 +569,7 @@
       <p class="hero-urdu">Aap Orders Lao, Baaki Sab Hum Karenge!</p>
       <p>Visit local stores, book product orders through the Kamai app, and earn commission on every approved order — no office, no fixed hours, no investment required.</p>
       <div class="hero-btns">
-        <a href="#cta" class="btn-primary">Start Earning Today</a>
+        <a href="https://rider.assorted.group" class="btn-primary" target="_blank" rel="noopener">Start Earning Today</a>
         <a href="#how" class="btn-ghost">See How It Works</a>
       </div>
       <div class="hero-alt">Distributor or brand? <a href="#distributors">List your products on Kamai &rarr;</a></div>
@@ -559,7 +598,7 @@
   <h2>4 Steps to <span class="lime">Your First Commission</span></h2>
   <p class="section-sub">Simple. Mobile. Flexible. Everything happens through the Kamai app on your phone.</p>
   <div class="how-grid">
-    <div class="how-step"><div class="step-num">1</div><h3>Register on Kamai</h3><p>Sign up at kamai.assorted.group using your phone number. Get approved and assigned your area.</p></div>
+    <div class="how-step"><div class="step-num">1</div><h3>Register on Kamai</h3><p>Sign up on the Kamai rider portal using your phone number. Get approved and assigned your area.</p></div>
     <div class="how-step"><div class="step-num">2</div><h3>Visit Retail Stores</h3><p>Go to stores in your area. GPS check-in, capture photos, register new stores, and collect product orders.</p></div>
     <div class="how-step"><div class="step-num">3</div><h3>Submit via App</h3><p>Submit orders through the Kamai app. Track status in real time with your earnings dashboard.</p></div>
     <div class="how-step"><div class="step-num">4</div><h3>Earn Commission</h3><p>Once approved, commission is credited within 10 working days to your account or wallet.</p></div>
@@ -636,7 +675,7 @@
       </ul>
       <a class="btn-primary dist-btn" href="https://apt.assorted.group/auth/signup" target="_blank" rel="noopener">Create Distributor Account</a>
       <p class="dist-login">Already registered? <a href="https://apt.assorted.group/auth/login" target="_blank" rel="noopener">Log in</a></p>
-      <p class="dist-contact">Want to talk first? Call <a href="tel:+923422221633">+92 342 2221633</a> or email <a href="mailto:hello@assorted.group">hello@assorted.group</a></p>
+      <p class="dist-contact">Want to talk first? Call <a href="tel:+923111152624">0311 1152624</a> or email <a href="mailto:hello@assorted.group">hello@assorted.group</a></p>
     </aside>
   </div>
   <div class="dist-benefits">
@@ -654,9 +693,9 @@
   <p class="section-sub">Kamai is powered by Assorted Produce Traders (APT), a food trading and distribution company headquartered in Islamabad. APT sources, imports, stocks and distributes into retail, so every Kamai order rides on a working supply chain.</p>
   <div class="apt-stats">
     <div class="apt-stat"><strong>2016</strong><span>Serving retail stores in Islamabad and Rawalpindi since</span></div>
-    <div class="apt-stat"><strong>74+</strong><span>Active retail accounts across the twin cities</span></div>
-    <div class="apt-stat"><strong>9</strong><span>Operations run in-house, from import to payment retrieval</span></div>
-    <div class="apt-stat"><strong>4</strong><span>Cities where Kamai is active today</span></div>
+    <div class="apt-stat"><strong><span data-count="100">100</span>+</strong><span>Active retail accounts across the twin cities</span></div>
+    <div class="apt-stat"><strong><span data-count="9">9</span></strong><span>Operations run in-house, from import to payment retrieval</span></div>
+    <div class="apt-stat"><strong><span data-count="4">4</span></strong><span>Cities where Kamai is active today</span></div>
   </div>
 
   <h3 class="apt-h">The route to shelf</h3>
@@ -677,7 +716,7 @@
     <div>
       <span class="section-label">Retail Network</span>
       <h3>Where the products land</h3>
-      <p>APT already delivers into 74+ active retail accounts across Islamabad and Rawalpindi: supermarkets, pharmacies, general stores and fuel-station convenience outlets, with more added as territories are covered.</p>
+      <p>APT already delivers into 100+ active retail accounts across Islamabad and Rawalpindi: supermarkets, pharmacies, general stores and fuel-station convenience outlets, with more added as territories are covered.</p>
     </div>
     <div class="apt-logos">
       <div class="apt-logo"><img src="assets/retail/dwatson.webp" alt="D. Watson" width="116" height="140" loading="lazy" decoding="async"></div>
@@ -801,12 +840,9 @@
   <h2>Ready to Start Earning?</h2>
   <p>Register on Kamai today, get assigned your area, and earn commission on every order you collect. No office. No fixed time. Your phone is your office.</p>
   <div>
-    <a href="https://kamai.assorted.group" class="btn-primary" style="font-size:1rem;padding:16px 36px;display:inline-block;margin-bottom:20px;">Register at kamai.assorted.group</a>
+    <a href="https://rider.assorted.group" class="btn-primary" target="_blank" rel="noopener" style="font-size:1rem;padding:16px 36px;display:inline-block;">Register as a Kamai Hero</a>
   </div>
-  <div>
-    <a href="#" class="store-btn"><span class="store-icon">▶</span> Google Play</a>
-    <a href="#" class="store-btn"><span class="store-icon"></span> App Store</a>
-  </div>
+
   <div class="cta-dist">
     <div>
       <strong>Distributor or brand?</strong>
@@ -815,7 +851,7 @@
     <a href="https://apt.assorted.group/auth/signup" class="btn-ghost" target="_blank" rel="noopener">Create Distributor Account</a>
   </div>
   <div style="margin-top:32px;color:rgba(255,255,255,0.35);font-size:.82rem;">
-    Questions? Call us at <span style="color:var(--lime);font-weight:700;">+92 321 8526405</span>
+    Questions? Call us at <span style="color:var(--lime);font-weight:700;">0311 1152624</span>
   </div>
 </section>
 
@@ -836,7 +872,7 @@
 </footer>
 
 <div class="powered">
-  Powered by <span>Assorted Produce Traders (APT)</span> · FF 27, Zarpar Arcade, D-12 Markaz, Islamabad · <span>+92 321 8526405</span>
+  Powered by <span>Assorted Produce Traders (APT)</span> · FF 27, Zarpar Arcade, D-12 Markaz, Islamabad · <span>0311 1152624</span>
 </div>
 
 
@@ -895,6 +931,34 @@
   function go() { (window.requestIdleCallback || function (c) { setTimeout(c, 250); })(embed); }
   if (document.readyState === 'complete') go();
   else window.addEventListener('load', go, { once: true });
+})();
+</script>
+<script>
+(function () {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  // Count-up for stat numbers; the real value is in the markup so no-JS and crawlers see it.
+  var nums = [].slice.call(document.querySelectorAll('[data-count]'));
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      var el = e.target, end = +el.getAttribute('data-count'), t0 = null, dur = 1400;
+      function tick(t) {
+        if (t0 === null) t0 = t;
+        var k = Math.min((t - t0) / dur, 1), eased = 1 - Math.pow(1 - k, 3);
+        el.textContent = Math.round(end * eased);
+        if (k < 1) requestAnimationFrame(tick); else el.textContent = end;
+      }
+      el.textContent = '0';
+      requestAnimationFrame(tick);
+    });
+  }, { threshold: 0.6 });
+  nums.forEach(function (n) { io.observe(n); });
+  // Staggered entrance for logo and product grids
+  [].forEach.call(document.querySelectorAll('.apt-logo, .apt-prod'), function (el, i) {
+    el.style.transitionDelay = ((i % 5) * 0.07) + 's';
+  });
 })();
 </script>
 </body>
